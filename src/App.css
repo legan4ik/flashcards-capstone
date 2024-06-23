@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+.btn {
+  margin: 3px;
+}
+
+
+table {
+  width: 100%;
+  border: 1px solid black;
+}
+
+td {
+   width: 50%;
+}
+
+.cardBack {
+  display: flex;
+  justify-content: flex-end
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

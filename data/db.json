@@ -1,7 +1,7 @@
 {
   "decks": [
     {
-      "name": "Rendering in React2dsdsdsd",
+      "name": "Rendering in React",
       "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. ",
       "id": 1
     },
@@ -31,16 +31,10 @@
       "id": 5
     },
     {
-      "front": "dsdsd",
-      "back": "sdsdsdsd",
-      "deckId": 1,
+      "front": "111",
+      "back": "1112",
+      "deckId": 2,
       "id": 6
-    },
-    {
-      "front": "sdsdsd",
-      "back": "sdsdsd",
-      "deckId": 1,
-      "id": 7
     }
   ]
 }
