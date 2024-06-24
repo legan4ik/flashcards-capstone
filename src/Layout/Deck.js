@@ -19,10 +19,8 @@ function Deck({ deck, setFetchDecks, deckEdit = false }) {
   return (
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">
-          {deck.name}
-          {deckEdit ? "" : ` (${deck.cards.length} card(s))`}
-        </h5>
+        <h5 class="card-title">{deck.name}</h5>
+        <div>{deckEdit ? "" : `${deck.cards.length} cards`}</div>
         <p class="card-text">{deck.description}</p>
         <Link
           to={deckEdit ? `/decks/${deck.id}/edit` : `/decks/${deck.id}`}

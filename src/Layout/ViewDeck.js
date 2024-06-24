@@ -1,10 +1,10 @@
 import React from "react";
 import Deck from "./Deck";
-import Study from "./Study";
 import CreateEditCard from "./CreateEditCard";
 import CreateEditDeck from "./CreateEditDeck";
 import BreadCrumb from "./Breadcrumb";
 import CardList from "./CardList";
+import NotFound from "./NotFound";
 import { Routes, Route, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { readDeck } from "../utils/api";
@@ -55,7 +55,6 @@ function ViewDeck({ setFetchDecks }) {
               </>
             }
           />
-          <Route path="study" element={<Study />} />
           <Route
             path="edit"
             element={<CreateEditDeck setFetch={setFetchDeckInfo} />}
@@ -80,6 +79,7 @@ function ViewDeck({ setFetchDecks }) {
               />
             }
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
     );

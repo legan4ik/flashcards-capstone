@@ -62,7 +62,12 @@ function Study() {
       { name: deck.name, last: false, link: `/decks/${deck.id}` },
       { name: "Study", last: true },
     ];
-    let txt = cardText ? cardText: deck.cards[0].front
+    let initText = "";
+    if (cardsCount > 2) {
+      initText = deck.cards[0].front;
+    } else {
+      initText = `You need at least 3 cards to study. There are ${cardsCount} cards in this deck`;
+    }
     return (
       <>
         <BreadCrumb items={breadcrumbs}></BreadCrumb>
@@ -74,17 +79,13 @@ function Study() {
                 ? `Card ${num + 1} of ${cardsCount}`
                 : "Not enough cards"}
             </h5>
-            <p class="card-text">
-              {cardsCount > 2
-                ? txt
-                : `You need at least 3 cards to study. There are ${cardsCount} cards in this deck`}
-            </p>
-            {cardsCount < 3 ? (
+            <p class="card-text">{cardText ? cardText : initText}</p>
+            {cardsCount > 2 ? (
+              ""
+            ) : (
               <Link to={`/decks/${deck.id}/cards/new`} class="btn btn-primary">
                 + Add cards
               </Link>
-            ) : (
-              ""
             )}
             {cardsCount > 2 ? (
               <button
