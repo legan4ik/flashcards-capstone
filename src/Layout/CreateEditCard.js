@@ -6,24 +6,20 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 function CreateEditCard({ setFetch, deckName }) {
-  let breadcrumbs = [];
-  let { cardId } = useParams();
-  let { deckId } = useParams();
+  const { cardId } = useParams();
+  const { deckId } = useParams();
+
+  let breadcrumbs = [{ name: deckName, last: false, link: `/decks/${deckId}` }];
+
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
 
   let screenName = "Add Card";
   if (cardId) {
     screenName = "Edit Card";
-    breadcrumbs = [
-      { name: deckName, last: false, link: `/decks/${deckId}` },
-      { name: `${screenName} ${cardId}`, last: true },
-    ];
+    breadcrumbs.push({ name: `${screenName} ${cardId}`, last: true });
   } else {
-    breadcrumbs = [
-      { name: deckName, last: false, link: `/decks/${deckId}` },
-      { name: screenName, last: true },
-    ];
+    breadcrumbs.push({ name: screenName, last: true });
   }
 
   useEffect(() => {
