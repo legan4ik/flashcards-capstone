@@ -55,7 +55,6 @@ function CreateEditCard({ setFetch, deckName }) {
     setFront("");
     setBack("");
     setFetch(true);
-    navigate(`/decks/${deckId}`);
   }
 
   return (
@@ -89,10 +88,10 @@ function CreateEditCard({ setFetch, deckName }) {
           />
         </div>
         <Link to={`/decks/${deckId}`} class="btn btn-secondary">
-          Cancel
+          Done
         </Link>
         <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
-          Submit
+          Save
         </button>
       </form>
     </>
